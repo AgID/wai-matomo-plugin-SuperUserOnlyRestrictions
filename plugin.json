@@ -1,0 +1,29 @@
+{
+    "name": "UsersManagerOnlyAdmin",
+    "description": "This plugin restricts the ability to edit users via userSettings to admin users only",
+    "version": "0.1.0",
+    "theme": false,
+    "require": {
+        "piwik": ">=3.13.0-stable,<4.0.0-b1"
+    },
+    "authors": [
+        {
+            "name": "Andrea Ciccu",
+            "email": "andrea.ciccu@softfobia.com",
+            "homepage": ""
+        }
+    ],
+    "support": {
+        "email": "",
+        "issues": "",
+        "forum": "",
+        "irc": "",
+        "wiki": "",
+        "source": "",
+        "docs": "",
+        "rss": ""
+    },
+    "homepage": "",
+    "license": "GPL v3+",
+    "keywords": []
+}
