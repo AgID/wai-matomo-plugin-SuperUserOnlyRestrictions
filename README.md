@@ -14,7 +14,7 @@ Add the following section to your `config.ini.php`:
 
 ```
 [UsersManagerOnlyAdmin]
-users_manager_only_admin_enabled[] = true
+users_manager_only_admin_enabled = true
 
 ```
 
