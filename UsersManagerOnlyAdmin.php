@@ -48,8 +48,10 @@ class UsersManagerOnlyAdmin extends \Piwik\Plugin
      */
     public function checkUserHasAdminAccess()
     {
-        Piwik::checkUserIsNotAnonymous();
-        Piwik::checkUserHasSomeAdminAccess();
-        UsersManager::dieIfUsersAdminIsDisabled();
+        if(isset($this->pluginConfig['users_manager_only_admin_enabled']) && $this->pluginConfig['users_manager_only_admin_enabled']){
+            Piwik::checkUserIsNotAnonymous();
+            Piwik::checkUserHasSomeAdminAccess();
+            UsersManager::dieIfUsersAdminIsDisabled();
+        }
     }
 }

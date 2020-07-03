@@ -14,6 +14,8 @@ Add the following section to your `config.ini.php`:
 
 ```
 [UsersManagerOnlyAdmin]
+users_manager_only_admin_enabled[] = true
+
 ```
 
 **Make sure you have direct access to the `config.ini.php` file before using this plugin**
