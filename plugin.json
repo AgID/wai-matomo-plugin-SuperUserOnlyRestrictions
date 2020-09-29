@@ -1,7 +1,7 @@
 {
     "name": "UsersManagerOnlySuperUser",
     "description": "This plugin restricts the ability to edit users via userSettings to super users only",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "theme": false,
     "require": {
         "piwik": ">=3.13.0-stable,<4.0.0-b1"
