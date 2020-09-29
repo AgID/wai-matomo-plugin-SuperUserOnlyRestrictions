@@ -7,13 +7,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\UsersManagerOnlyAdmin;
+namespace Piwik\Plugins\UsersManagerOnlySuperUser;
 
 use Piwik\Config;
 use Piwik\Piwik;
 use Piwik\Plugins\UsersManager\UsersManager;
 
-class UsersManagerOnlyAdmin extends \Piwik\Plugin
+class UsersManagerOnlySuperUser extends \Piwik\Plugin
 {
     /**
      * The configuration array.
@@ -39,16 +39,16 @@ class UsersManagerOnlyAdmin extends \Piwik\Plugin
     public function registerEvents()
     {
         return [
-            'Controller.UsersManager.userSettings' => 'checkUserHasAdminAccess',
+            'Controller.UsersManager.userSettings' => 'checkUserHasSuperUserAccess',
         ];
     }
 
     /**
      * Check if user has super user access.
      */
-    public function checkUserHasAdminAccess()
+    public function checkUserHasSuperUserAccess()
     {
-        if(isset($this->pluginConfig['users_manager_only_admin_enabled']) && $this->pluginConfig['users_manager_only_admin_enabled']){
+        if(isset($this->pluginConfig['users_manager_only_super_user_enabled']) && $this->pluginConfig['users_manager_only_super_user_enabled']){
             Piwik::checkUserIsNotAnonymous();
             Piwik::checkUserHasSuperUserAccess();
         }

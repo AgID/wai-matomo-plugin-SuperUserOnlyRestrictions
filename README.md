@@ -1,4 +1,4 @@
-# Matomo UsersManagerOnlyAdmin Plugin
+# Matomo UsersManagerOnlySuperUser Plugin
 
 ## Description
 
@@ -12,9 +12,9 @@ Refer to [this Matomo FAQ](https://matomo.org/faq/plugins/faq_21/).
 
 Add the following section to your `config.ini.php`:
 
-```
-[UsersManagerOnlyAdmin]
-users_manager_only_admin_enabled = true
+```ini
+[UsersManagerOnlySuperUser]
+users_manager_only_super_user_enabled = true
 
 ```
 
