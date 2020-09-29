@@ -44,14 +44,13 @@ class UsersManagerOnlyAdmin extends \Piwik\Plugin
     }
 
     /**
-     * Filter IP using the value of the client IP address.
+     * Check if user has super user access.
      */
     public function checkUserHasAdminAccess()
     {
         if(isset($this->pluginConfig['users_manager_only_admin_enabled']) && $this->pluginConfig['users_manager_only_admin_enabled']){
             Piwik::checkUserIsNotAnonymous();
-            Piwik::checkUserHasSomeAdminAccess();
-            UsersManager::dieIfUsersAdminIsDisabled();
+            Piwik::checkUserHasSuperUserAccess();
         }
     }
 }

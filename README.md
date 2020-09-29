@@ -2,7 +2,7 @@
 
 ## Description
 
-This plugin restricts the ability to edit users via userSettings to admin users only.
+This plugin restricts the ability to edit users via userSettings to super users only.
 
 ## Installation
 
