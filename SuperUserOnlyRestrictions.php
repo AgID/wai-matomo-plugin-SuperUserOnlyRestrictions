@@ -42,6 +42,7 @@ class SuperUserOnlyRestrictions extends \Piwik\Plugin
             'Controller.UsersManager.userSettings' => 'restrictAccess',
             'Controller.Widgetize.index' => 'restrictAccess',
             'Controller.API.listAllAPI' => 'restrictAccess',
+            'Controller.CoreAdminHome.trackingCodeGenerator' => 'restrictAccess',
         ];
     }
 
@@ -50,7 +51,8 @@ class SuperUserOnlyRestrictions extends \Piwik\Plugin
      */
     public function restrictAccess()
     {
-        if(isset($this->pluginConfig['super_user_only_restrictions_enabled']) && $this->pluginConfig['super_user_only_restrictions_enabled']){
+        if(isset($this->pluginConfig['super_user_only_restrictions_enabled'])
+            && $this->pluginConfig['super_user_only_restrictions_enabled']) {
             Piwik::checkUserIsNotAnonymous();
             Piwik::checkUserHasSuperUserAccess();
         }
