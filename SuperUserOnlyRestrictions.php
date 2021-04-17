@@ -7,13 +7,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\UsersManagerOnlySuperUser;
+namespace Piwik\Plugins\SuperUserOnlyRestrictions;
 
 use Piwik\Config;
 use Piwik\Piwik;
 use Piwik\Plugins\UsersManager\UsersManager;
 
-class UsersManagerOnlySuperUser extends \Piwik\Plugin
+class SuperUserOnlyRestrictions extends \Piwik\Plugin
 {
     /**
      * The configuration array.
@@ -23,7 +23,7 @@ class UsersManagerOnlySuperUser extends \Piwik\Plugin
     protected $pluginConfig;
 
     /**
-     * Construct a new LoginFilterIp instance.
+     * Construct a new SuperUserOnlyRestrictions instance.
      */
     public function __construct() {
         parent::__construct();
@@ -39,16 +39,20 @@ class UsersManagerOnlySuperUser extends \Piwik\Plugin
     public function registerEvents()
     {
         return [
-            'Controller.UsersManager.userSettings' => 'checkUserHasSuperUserAccess',
+            'Controller.UsersManager.userSettings' => 'restrictAccess',
+            'Controller.Widgetize.index' => 'restrictAccess',
+            'Controller.API.listAllAPI' => 'restrictAccess',
+            'Controller.CoreAdminHome.trackingCodeGenerator' => 'restrictAccess',
         ];
     }
 
     /**
-     * Check if user has super user access.
+     * Restrict access to super users only, if the plugin is enabled.
      */
-    public function checkUserHasSuperUserAccess()
+    public function restrictAccess()
     {
-        if(isset($this->pluginConfig['users_manager_only_super_user_enabled']) && $this->pluginConfig['users_manager_only_super_user_enabled']){
+        if(isset($this->pluginConfig['super_user_only_restrictions_enabled'])
+            && $this->pluginConfig['super_user_only_restrictions_enabled']) {
             Piwik::checkUserIsNotAnonymous();
             Piwik::checkUserHasSuperUserAccess();
         }

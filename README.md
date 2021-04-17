@@ -1,8 +1,8 @@
-# Matomo UsersManagerOnlySuperUser Plugin
+# Matomo SuperUserOnlyRestrictions Plugin
 
 ## Description
 
-This plugin restricts the ability to edit users via userSettings to super users only.
+This plugin restricts some modules/actions to super users only.
 
 ## Installation
 
@@ -13,8 +13,8 @@ Refer to [this Matomo FAQ](https://matomo.org/faq/plugins/faq_21/).
 Add the following section to your `config.ini.php`:
 
 ```ini
-[UsersManagerOnlySuperUser]
-users_manager_only_super_user_enabled = true
+[SuperUserOnlyRestrictions]
+super_user_only_restrictions_enabled = true
 
 ```
 
