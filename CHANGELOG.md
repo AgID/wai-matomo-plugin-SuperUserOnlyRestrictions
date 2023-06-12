@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+Updated Matomo version requirement
+
 ## 1.0.0
 
 Rename plugin
