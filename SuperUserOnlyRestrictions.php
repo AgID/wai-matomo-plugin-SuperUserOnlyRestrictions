@@ -40,6 +40,7 @@ class SuperUserOnlyRestrictions extends \Piwik\Plugin
     {
         return [
             'Controller.UsersManager.userSettings' => 'restrictAccess',
+            'Controller.UsersManager.userSecurity' => 'restrictAccess',
             'Controller.Widgetize.index' => 'restrictAccess',
             'Controller.API.listAllAPI' => 'restrictAccess',
             'Controller.CoreAdminHome.trackingCodeGenerator' => 'restrictAccess',
