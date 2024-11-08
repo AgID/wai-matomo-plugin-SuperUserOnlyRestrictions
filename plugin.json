@@ -1,7 +1,7 @@
 {
     "name": "SuperUserOnlyRestrictions",
     "description": "This plugin restricts some modules/actions to super users only",
-    "version": "1.0.0",
+    "version": "1.2.1",
     "theme": false,
     "require": {
         "piwik": ">=3.13.0-stable,<5.0.0-b1"
